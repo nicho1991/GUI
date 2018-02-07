@@ -1,0 +1,34 @@
+﻿<Window x:Name="thewindow" x:Class="Hull_Speed.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hull_Speed"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" KeyDown="bigger">
+           <DockPanel>
+            <StackPanel Width="200" HorizontalAlignment="Left">
+                <DockPanel>
+                    <Label MinWidth="50">Name: </Label>
+                <TextBox x:Name="texttest" VerticalContentAlignment="Center" Text="whatever"/>
+            </DockPanel>
+                <DockPanel>
+                    <Label MinWidth="50">Length: </Label>
+                    <TextBox x:Name="lengthBox" VerticalContentAlignment="Center">27</TextBox>
+                <Label HorizontalAlignment="Right">feet</Label>
+            </DockPanel>
+                <StackPanel>
+                    <Button x:Name="testbut" HorizontalAlignment="Center" Click="Button_Click">calculate speed</Button>
+                </StackPanel>
+            <DockPanel><Label>Hull speed:</Label>
+                <TextBlock x:Name="knotsBox" VerticalAlignment="Center" HorizontalAlignment="Center">7.0</TextBlock>
+                <Label HorizontalAlignment="Right">Knots</Label>
+                </DockPanel>
+            </StackPanel>
+            <DockPanel>
+            <Image x:Name="sailboatimg" Source="D:\git\4.semester\GUI\Hull_Speed\Hull_Speed\Sailboat.jpg" Margin="10,0"></Image>
+            </DockPanel>
+        <ComboBox Height="320.8" VerticalAlignment="Top" Width="120"/>
+    </DockPanel>
+
+</Window>
