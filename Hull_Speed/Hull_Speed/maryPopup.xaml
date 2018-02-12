@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hull_Speed"
         mc:Ignorable="d"
-        Title="maryPopup" Width="500" Height="300">
+        Title="maryPopup" Height="300" Width="500">
     <Grid ShowGridLines="True">
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -14,8 +14,9 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="namelabel" Margin="0" Grid.Column="1">the New Window</Label>
+        <Label x:Name="namelabel" Margin="0" Grid.Column="1" Grid.ColumnSpan="2">the New Window</Label>
         <Button HorizontalAlignment="Right" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Right" VerticalAlignment="Bottom" Click="Button_Click" Margin="0">Ok</Button>
         <Button HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalAlignment="Bottom" VerticalContentAlignment="Center" Click="Button_Click_1" Margin="0" Grid.Column="1" Grid.Row="1">What is the name?</Button>
     </Grid>

@@ -26,10 +26,11 @@ namespace clicker
         {
             InitializeComponent();
             Click.Click += clickHandler;
+            thetext.FontFamily = new FontFamily("Times New Roman");
+            
 
-               
-            
-            
+
+
         }
 
         private void clickHandler(object sender, RoutedEventArgs e)
