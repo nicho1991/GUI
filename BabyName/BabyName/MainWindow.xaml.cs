@@ -104,6 +104,32 @@ namespace BabyName
 
 
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+            App.Current.Shutdown();
+        }
+
+        private void MenuItem_OnClick(object sender, RoutedEventArgs e)
+        {
+            theWindow.FontSize = 10;
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            theWindow.FontSize = 15;
+        }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            theWindow.FontSize = 20;
+        }
+
+        private void MenuItem_Click_3(object sender, RoutedEventArgs e)
+        {
+            theWindow.FontSize = 25;
+        }
     }
 
 }
