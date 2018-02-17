@@ -5,8 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_06AgentAssignment"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Width="500" Height="300">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="id" Margin="5">id</TextBlock>
+        <TextBlock x:Name="CodeName1" Margin="5" Grid.Row="1">CodeName</TextBlock>
+        <TextBlock x:Name="Speciality" Margin="5" Grid.Row="2">Speciality</TextBlock>
+        <TextBlock x:Name="Assignment" Margin="5" Grid.Row="3">Assignment</TextBlock>
         
+        <Grid Grid.Row="4" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="backBtn" Grid.Column="0" Margin="5">back</Button>
+            <Button x:Name="fwdBtn" Grid.Column="1" Margin="5">forward</Button>
+            <Button Grid.Row="1" Margin="5" Click="ButtonBase_OnClick"> Add new</Button>
+        </Grid>
+        
+        <TextBox Name="IdBox" Margin="5" Grid.Column="1" Text="{Binding ElementName=agentlist, Path=SelectedItem.ID}"></TextBox>
+        <TextBox Name="CodeNameBox" Margin="5" Grid.Column="1" Grid.Row="1" Text="{Binding ElementName=agentlist, Path=SelectedItem.CodeName}"></TextBox>
+        <TextBox Name="SpecialityBox" Margin="5" Grid.Column="1" Grid.Row="2" Text="{Binding ElementName=agentlist, Path=SelectedItem.Speciality}"></TextBox>
+        <TextBox Name="AssignmentBox" AcceptsReturn="True" Margin="5" Grid.Column="1" Grid.Row="3" Text="{Binding ElementName=agentlist, Path=SelectedItem.Assignment}"></TextBox>
+
+
+        <ListBox x:Name="agentlist" Grid.Column="2" Grid.RowSpan="4" DisplayMemberPath="CodeName">
+
+        </ListBox>
+
     </Grid>
 </Window>
