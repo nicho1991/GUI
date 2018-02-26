@@ -96,7 +96,11 @@
 
         <TextBox Name="IdBox" Margin="5" Grid.Column="1" Text="{Binding Path=ID}" Grid.Row="2" Style="{StaticResource JamesStyle}"></TextBox>
         <TextBox Name="CodeNameBox" Margin="5" Grid.Column="1" Grid.Row="3" Text="{Binding Path=CodeName}"></TextBox>
-        <TextBox Name="SpecialityBox" Margin="5" Grid.Column="1" Grid.Row="4" Text="{Binding Path=Speciality}"></TextBox>
+        <ComboBox Name="SpecialityBox" Margin="5" Grid.Column="1" Grid.Row="4" Text="{Binding Path=Speciality}">
+            <ComboBoxItem>Assasination</ComboBoxItem>
+            <ComboBoxItem>Idling</ComboBoxItem>
+            <ComboBoxItem>A shoulder to cry on</ComboBoxItem>
+        </ComboBox>
         <TextBox Name="AssignmentBox" AcceptsReturn="True" Margin="5" Grid.Column="1" Grid.Row="5" Text="{Binding ElementName=agentlist, Path=SelectedItem.Assignment}"></TextBox>
 
 
