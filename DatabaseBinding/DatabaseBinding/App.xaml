@@ -1,8 +1,8 @@
-﻿<Application x:Class="_06AgentAssignment.App"
+﻿<Application x:Class="DatabaseBinding.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:_06AgentAssignment"
-             StartupUri="agents.xaml">
+             xmlns:local="clr-namespace:DatabaseBinding"
+             StartupUri="MainWindow.xaml">
     <Application.Resources>
          
     </Application.Resources>

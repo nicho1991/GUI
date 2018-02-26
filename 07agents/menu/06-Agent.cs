@@ -15,7 +15,7 @@ namespace I4GUI
       string speciality;
       string assignment;
 
-      public Agent()
+        public Agent()
       {
       }
 
@@ -74,5 +74,5 @@ namespace I4GUI
             assignment = value;
          }
       }
-   }
+    }
 }

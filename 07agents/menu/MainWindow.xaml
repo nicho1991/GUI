@@ -1,0 +1,38 @@
+﻿<Window x:Class="menu.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:menu"
+        mc:Ignorable="d"
+        Title="Agent2 menu" Height="350" Width="250">
+        <Window.Resources>
+            <ImageBrush x:Name="imgBrush" x:Key="TileBrushh" TileMode="Tile"
+                        ViewportUnits="Absolute" Viewport="0 0 64 64"
+                        ImageSource="download.jpg" Opacity="0.5"></ImageBrush>
+            <ImageBrush x:Key="Dab" 
+                        ImageSource="dab.jpg"
+            ></ImageBrush>
+            <Style TargetType="Button">
+            <Style.Setters>
+                <Setter Property="Control.FontSize" Value="14"></Setter>
+            </Style.Setters>
+                <Style.Triggers>
+                    <Trigger Property="Control.IsMouseOver" Value="true">
+                        <Setter Property="Control.Foreground" Value="Red"></Setter>
+                        <Setter Property="Control.FontSize" Value="22"></Setter>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+    </Window.Resources>
+    
+
+    <Grid Background="{DynamicResource Dab }" >
+        <StackPanel Margin="5" Button.Click="ButtonBase_OnClick">
+            <Button Background="{DynamicResource TileBrushh}" MinHeight="50">Agents</Button>
+            <Button Background="{DynamicResource TileBrushh}" MinHeight="50">Another window</Button>
+            
+            <Slider x:Name="slider" Value="64" ValueChanged="Slider_OnValueChanged" Maximum="64" Minimum="10"/>
+        </StackPanel>
+    </Grid>
+</Window>

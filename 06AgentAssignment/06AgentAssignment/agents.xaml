@@ -1,0 +1,94 @@
+﻿<Window x:Class="_06AgentAssignment.Agentss"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_06AgentAssignment"
+        mc:Ignorable="d"
+        Title="Agent window" Width="500" Height="300">
+    <Window.DataContext>
+        <local:Agents />
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Menu Grid.ColumnSpan="3">
+            <MenuItem Header="_File">
+                <MenuItem Name="FileNew" Header="_New" Command="{Binding NewCommand}"></MenuItem>
+                <MenuItem Name="FileOpen" Header="_Open" Command="{Binding OpenCommand}" CommandParameter="{Binding ElementName=tbxFileName , Path=Text}"></MenuItem>
+                <MenuItem Name="FileSave" Header="_Save" Command="{Binding SaveCommand}"></MenuItem>
+                <MenuItem Name="FileSaveAs" Header="Save _As" Command="{Binding SaveAsCommand}" CommandParameter="{Binding ElementName=tbxFileName , Path=Text}"></MenuItem>
+                <MenuItem Name="FileExit" Header="_Exit" Command="{Binding ExitCommand}"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Agents">
+                <MenuItem Header="_Previous" Command="{Binding PreviusCommand}"></MenuItem>
+                <MenuItem Header="_Next" Command="{Binding NextCommand}"></MenuItem>
+                <MenuItem Header="Delete" Command="{Binding DeleteCommand}"></MenuItem>
+                <MenuItem Header="Add" Command="{Binding AddCommand}"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <ToolBar Grid.Row="1" Grid.ColumnSpan="3" >
+            <Button Content="Previous"  Command="{Binding PreviusCommand}"></Button>
+            <Button Content="Next" Command="{Binding NextCommand}"></Button>
+            <Button Command="{Binding AddCommand}">+</Button>
+            <Button x:Name="delete" Command="{Binding DeleteCommand}">-</Button>
+            <Label>File Name:</Label>
+            <TextBox Name="tbxFileName" MinWidth="40" Text="fuckers"></TextBox>
+
+
+        </ToolBar>
+        <TextBlock x:Name="id" Margin="5" Grid.Row="2">id</TextBlock>
+        <TextBlock x:Name="CodeName1" Margin="5" Grid.Row="3">CodeName</TextBlock>
+        <TextBlock x:Name="Speciality" Margin="5" Grid.Row="4">Speciality</TextBlock>
+        <TextBlock x:Name="Assignment" Margin="5" Grid.Row="5">Assignment</TextBlock>
+        <Grid Grid.Row="8" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+
+
+        </Grid>
+
+        <TextBox Name="IdBox" Margin="5" Grid.Column="1" Text="{Binding Path=ID}" Grid.Row="2"></TextBox>
+        <TextBox Name="CodeNameBox" Margin="5" Grid.Column="1" Grid.Row="3" Text="{Binding Path=CodeName}"></TextBox>
+        <TextBox Name="SpecialityBox" Margin="5" Grid.Column="1" Grid.Row="4" Text="{Binding Path=Speciality}"></TextBox>
+        <TextBox Name="AssignmentBox" AcceptsReturn="True" Margin="5" Grid.Column="1" Grid.Row="5" Text="{Binding ElementName=agentlist, Path=SelectedItem.Assignment}"></TextBox>
+
+
+        <ListBox x:Name="agentlist" 
+                 Grid.Column="2" 
+                 Grid.RowSpan="4" 
+                 DisplayMemberPath="CodeName" 
+                 ItemsSource="{Binding}" IsSynchronizedWithCurrentItem="True"
+                 SelectedIndex="{Binding Path=CurrentIndex}"
+                 Grid.Row="2">
+
+        </ListBox>
+        <StatusBar Grid.Row="7
+                   " Grid.ColumnSpan="5" >
+            <StatusBarItem Content="Agents: "></StatusBarItem>
+            <StatusBarItem Name="stbAgents" Content="{Binding Path=Count}"></StatusBarItem>
+            
+            <StatusBarItem Name="dateText" HorizontalContentAlignment="Right"></StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>
