@@ -5,10 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_06AgentAssignment"
         xmlns:menu="clr-namespace:menu"
+        xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
         mc:Ignorable="d"
         Title="Agent window" Width="500" Height="300"
         Background="{DynamicResource backGroundBrush}">
        <Window.Resources>
+           <CollectionViewSource x:Key="agentCollectionView" Source="{Binding}">
+               <CollectionViewSource.SortDescriptions>
+                <componentModel:SortDescription PropertyName="ProcessName" />
+            </CollectionViewSource.SortDescriptions>
+           </CollectionViewSource>
            <menu:AgentIDToValueConverter x:Key="IDToColorConverter"></menu:AgentIDToValueConverter>
            <Style x:Key="JamesStyle" TargetType="{x:Type TextBox}">
                <Style.Triggers>
