@@ -1,0 +1,15 @@
+﻿<Application x:Class="_09Settings.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:_09Settings"
+             xmlns:properties="clr-namespace:_09Settings.Properties"
+             Startup="App_OnStartup"
+             Exit="App_OnExit"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <properties:Settings x:Key="Settings" />
+
+
+
+    </Application.Resources>
+</Application>
