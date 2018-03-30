@@ -13,6 +13,7 @@ using System.Windows.Input;
 using I4GUI;
 using MvvmFoundation.Wpf;
 using System.Xml.Serialization;
+using menu;
 
 namespace _06AgentAssignment
 {
@@ -34,6 +35,7 @@ namespace _06AgentAssignment
 
         private void NewAgents()
         {
+
             Clear();
             filename = "";
             NotifyPropertyChanged("Count");
@@ -132,11 +134,19 @@ namespace _06AgentAssignment
 
         private void AddAgent()
         {
-            Add(new Agent());
-            CurrentIndex = Count - 1;
-            NotifyPropertyChanged("Count");
-        }
+            // Show Modal Dialog
+            var dlg = new EditDialog();
+            dlg.Title = "Add New Agent";
+            Agent newAgent = new Agent();
+            dlg.DataContext = newAgent;
+            if (dlg.ShowDialog() == true)
+            {
+                Add(newAgent);
+                CurrentIndex = Count - 1;
+                NotifyPropertyChanged("Count");
+            }
 
+        }
 
         ICommand _deleteCommand;
         public ICommand DeleteCommand

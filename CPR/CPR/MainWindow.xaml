@@ -1,0 +1,14 @@
+﻿<Window x:Class="CPR.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:myCPRControl="clr-namespace:CPRUserControl;assembly=CPRUserControl..NETFramework,Version=v4.6"
+        xmlns:local="clr-namespace:CPR"
+        xmlns:cprUserControl="clr-namespace:CPRUserControl;assembly=CPRUserControl"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <cprUserControl:UserControl1 Name="Control1" LabelCPR ="CPRNummer" TextBoxCPR="1309"/>
+    </Grid>
+</Window>

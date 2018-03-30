@@ -79,7 +79,7 @@
             <Button x:Name="delete" Command="{Binding DeleteCommand}">-</Button>
             <Label>File Name:</Label>
             <TextBox Name="tbxFileName" MinWidth="40" Text="fuckers"></TextBox>
-
+            <Button Content="Edit" Click="Button_Click"></Button>
 
         </ToolBar>
         <TextBlock x:Name="id" Margin="5" Grid.Row="2">id</TextBlock>
@@ -96,29 +96,28 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-
-
         </Grid>
 
-        <TextBox Name="IdBox" Margin="5" Grid.Column="1" Text="{Binding Path=ID}" Grid.Row="2" Style="{StaticResource JamesStyle}"></TextBox>
-        <TextBox Name="CodeNameBox" Margin="5" Grid.Column="1" Grid.Row="3" Text="{Binding Path=CodeName}"></TextBox>
-        <ComboBox Name="SpecialityBox" Margin="5" Grid.Column="1" Grid.Row="4" Text="{Binding Path=Speciality}">
+        <TextBox IsReadOnly="True" Name="IdBox" Margin="5" Grid.Column="1" Text="{Binding Path=ID}" Grid.Row="2" Style="{StaticResource JamesStyle}" TextChanged="IdBox_TextChanged"></TextBox>
+        <TextBox IsReadOnly="True" Name="CodeNameBox" Margin="5" Grid.Column="1" Grid.Row="3" Text="{Binding Path=CodeName}"></TextBox>
+        <ComboBox IsReadOnly="True" Name="SpecialityBox" Margin="5" Grid.Column="1" Grid.Row="4" Text="{Binding Path=Speciality}">
             <ComboBoxItem>Assasination</ComboBoxItem>
             <ComboBoxItem>Idling</ComboBoxItem>
             <ComboBoxItem>A shoulder to cry on</ComboBoxItem>
         </ComboBox>
-        <TextBox Name="AssignmentBox" AcceptsReturn="True" Margin="5" Grid.Column="1" Grid.Row="5" Text="{Binding ElementName=agentlist, Path=SelectedItem.Assignment}"></TextBox>
+        <TextBox IsReadOnly="True" Name="AssignmentBox" AcceptsReturn="True" Margin="5" Grid.Column="1" Grid.Row="5" Text="{Binding ElementName=agentlist, Path=SelectedItem.Assignment}"></TextBox>
 
+        <DataGrid x:Name="agentlist" 
+                  Grid.Column="2" 
+                  Grid.RowSpan="4" 
+                  ItemTemplate="{DynamicResource AgentTemplate}"
+                  ItemsSource="{Binding}" IsSynchronizedWithCurrentItem="True"
+                  
+                  SelectedIndex="{Binding Path=CurrentIndex}"
+                  IsReadOnly="True"
+                  Grid.Row="2"
+                  />
 
-        <ListBox x:Name="agentlist" 
-                 Grid.Column="2" 
-                 Grid.RowSpan="4" 
-                 ItemTemplate="{DynamicResource AgentTemplate}"
-                 ItemsSource="{Binding}" IsSynchronizedWithCurrentItem="True"
-                 SelectedIndex="{Binding Path=CurrentIndex}"
-                 Grid.Row="2">
-
-        </ListBox>
         <StatusBar Grid.Row="7
                    " Grid.ColumnSpan="5" >
             <StatusBarItem Content="Agents: "></StatusBarItem>

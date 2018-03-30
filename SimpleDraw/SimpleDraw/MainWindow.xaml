@@ -1,0 +1,46 @@
+﻿<Window x:Class="SimpleDraw.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleDraw"
+        mc:Ignorable="d"
+        Title="Simple draw" Height="350" Width="525"
+        DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=SimpleDrawViewModel}"
+        KeyDown="MainWindow_OnKeyDown"
+        >
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <DockPanel>
+            <ToolBarTray DockPanel.Dock="Top">
+                <ToolBar Header="Color">
+                    <ComboBox x:Name="ColorCombo" Width="50" SelectionChanged="ColorCombo_OnSelectionChanged">
+                        <ComboBoxItem Height="25" Background="{Binding BlueBrush}" ></ComboBoxItem>
+                        <ComboBoxItem Height="25" Background="{Binding RedBrush}"></ComboBoxItem>
+                        <ComboBoxItem Height="25" Background="{Binding GreenBrush}"></ComboBoxItem>
+                        </ComboBox>
+
+                </ToolBar>
+            </ToolBarTray>
+        </DockPanel>
+        <Canvas x:Name="Canvas" Grid.Row="1" Background="Transparent" MouseMove="Canvas_OnMouseMove" MouseDown="Canvas_OnMouseDown"></Canvas>
+        
+        <StatusBar Grid.Row="2">
+            <DockPanel>
+                <TextBlock Text="Mouse Posistion X: "></TextBlock>
+                <TextBox x:Name="XMouse" Width="30"></TextBox>
+                <TextBlock Text="Y:"></TextBlock>
+                <TextBox x:Name="YMouse" Width="30"></TextBox>
+            </DockPanel>
+  
+        </StatusBar>
+    </Grid>
+    
+</Window>
+

@@ -41,5 +41,40 @@ namespace menu
             brush.Color = Colors.Yellow;
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            EditDialog dlg = new EditDialog();
+            dlg.Owner = this;
+
+            dlg.idEdit.Text = IdBox.Text;
+            dlg.CodeNameBoxEDIT.Text = CodeNameBox.Text;
+
+            dlg.SpecialityBoxEDIT.Text = SpecialityBox.Text;
+
+            dlg.AssignmentBoxEDIT.Text = AssignmentBox.Text;
+
+            if (dlg.ShowDialog() == true)
+            {
+                
+                // Do something with the dialog properties
+
+                IdBox.Text = dlg.idEdit.Text;
+                CodeNameBox.Text = dlg.CodeNameBoxEDIT.Text;
+
+                SpecialityBox.Text = dlg.SpecialityBoxEDIT.Text;
+
+                AssignmentBox.Text = dlg.AssignmentBoxEDIT.Text;
+
+                IdBox.UpdateLayout();
+
+            }
+        }
+
+        private void IdBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
+    
 }

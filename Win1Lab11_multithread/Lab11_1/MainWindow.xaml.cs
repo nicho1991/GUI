@@ -51,7 +51,6 @@ namespace Lab12_1
             // Convert control's decimal Value to an integer
             CalcPi((int)digits);
 
-
            Dispatcher.BeginInvoke(new Action(() =>
            {
                // Update statusbar
@@ -69,7 +68,6 @@ namespace Lab12_1
           {
               ShowProgress(pi.ToString(), digits, 0);
           }));
-
 
          if (digits > 0)
          {

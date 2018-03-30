@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="CPRUserControl.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CPRUserControl"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="CPRLabel" Content="CPR" VerticalAlignment="Center"/>
+        <TextBox x:Name="CPRText" Text="CPR-Nummer" Grid.Column="1" Margin="5" VerticalAlignment="Center" Padding="5"></TextBox>
+
+    </Grid>
+</UserControl>
